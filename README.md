@@ -4,12 +4,14 @@
 Python wrapper for "The Internet Chuck Norris Database" http://www.icndb.com/api/
 
 This python library has the same response with JSON API response but already parsed as python dictionary for easy usage.
+Compatible with python 2 & 3.
 
 #### Example usage:
 ```python
 from chuck import ChuckNorris
 
 cn = ChunkNorris()
+
 # Get random jokes.
 cn.random()
 
