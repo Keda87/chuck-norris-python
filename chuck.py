@@ -15,6 +15,14 @@ class NorrisException(Exception):
     pass
 
 
+class Norris(object):
+
+    def __init__(self):
+        self.id = None
+        self.joke = None
+        self.categories = None
+
+
 class ChuckNorris(object):
 
     def __init__(self):
@@ -48,25 +56,61 @@ class ChuckNorris(object):
 
         try:
             response = requests.get(url, params=params)
-            return response.json()
+            data = response.json()
+            data = data['value']
+            if isinstance(data, list):
+                results = []
+                for i in data:
+                    norris = Norris()
+                    norris.id = i['id']
+                    norris.joke = i['joke']
+                    norris.categories = i['categories']
+                    results.append(norris)
+                return results
+
+            norris = Norris()
+            norris.id = data['id']
+            norris.joke = data['joke']
+            norris.categories = data['categories']
+            return norris
         except ValueError:
-            return None
+            return Norris()
 
     def get_jokes_by_id(self, joke_id):
+        if isinstance(joke_id, str):
+            raise NorrisException('ID is not a number.')
         url = self.base_url + '%d/' % joke_id
-        response = requests.get(url)
-        return response.json()
+        try:
+            response = requests.get(url)
+            data = response.json()
+            data = data['value']
+            norris = Norris()
+            norris.id = data['id']
+            norris.joke = data['joke']
+            norris.categories = data['categories']
+            return norris
+        except ValueError:
+            return Norris()
 
     def get_jokes_count(self):
         url = self.base_url + 'count/'
         response = requests.get(url)
-        return response.json()
+        return response.json()['value']
 
     def get_jokes_categories(self):
         url = self.base_url.replace('jokes/', 'categories')
         response = requests.get(url)
-        return response.json()
+        return response.json()['value']
 
     def get_all_jokes(self):
         response = requests.get(self.base_url)
-        return response.json()
+        data = response.json()
+        data = data['value']
+        results = []
+        for i in data:
+            norris = Norris()
+            norris.id = i['id']
+            norris.joke = i['joke']
+            norris.categories = i['categories']
+            results.append(norris)
+        return results
