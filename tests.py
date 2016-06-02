@@ -54,5 +54,6 @@ class ChuckNorrisTestCase(unittest.TestCase):
         self.assertTrue('value' in data)
         self.assertEqual(data['value']['categories'][0], 'nerdy')
 
+
 if __name__ == '__main__':
     unittest.main()
