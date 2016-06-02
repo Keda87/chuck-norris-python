@@ -1,8 +1,5 @@
 """
-Python wrapper for `The Internet Chuck Norris Database` API at
-http://www.icndb.com/api/.
-This wrapper has the same response with the API json response but returns
-python dictionary for easy usage.
+Python wrapper for `The Internet Chuck Norris Database` API at http://www.icndb.com/api/.
 
 :author:     --  Adiyat Mubarak <adiyatmubarak@gmail.com>
 :link:       --  http://adiyatmubarak.web.id/
