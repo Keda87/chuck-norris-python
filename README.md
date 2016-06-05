@@ -1,10 +1,7 @@
 # chuck-norris-python
 [![Build Status](https://travis-ci.org/Keda87/chuck-norris-python.svg?branch=master)](https://travis-ci.org/Keda87/chuck-norris-python)
 
-Python wrapper for "The Internet Chuck Norris Database" http://www.icndb.com/api/
-
-This python library has the same response with JSON API response but already parsed as python dictionary for easy usage.
-Compatible with python 2 & 3.
+Python wrapper for "The Internet Chuck Norris Database" http://www.icndb.com/api/ and compatible with python 2 & 3.
 
 #### Installation:
 `$ pip install chuck-norris-python`
