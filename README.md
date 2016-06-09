@@ -13,7 +13,10 @@ from chuck import ChuckNorris
 cn = ChunkNorris()
 
 # Get random jokes.
-cn.random()
+data = cn.random()
+print(i.id)
+print(i.joke)
+print(i.categories)
 
 # Get multiple random jokes.
 data = cn.random(total=5)
@@ -49,8 +52,8 @@ print(data.joke)
 print(data.categories)
 
 # Get total jokes count.
-data = cn.get_jokes_count()
-print(data)  # int
+total = cn.get_jokes_count()
+print(total)  # int
 
 # Get all jokes categories.
 data = cn.get_jokes_categories()
