@@ -14,9 +14,9 @@ cn = ChunkNorris()
 
 # Get random jokes.
 data = cn.random()
-print(i.id)
-print(i.joke)
-print(i.categories)
+print(data.id)
+print(data.joke)
+print(data.categories)
 
 # Get multiple random jokes.
 data = cn.random(total=5)
@@ -53,16 +53,16 @@ print(data.categories)
 
 # Get total jokes count.
 total = cn.get_jokes_count()
-print(total)  # int
+print(total)
 
 # Get all jokes categories.
-data = cn.get_jokes_categories()
-for i in data:
-    print i  # string
+categories = cn.get_jokes_categories()
+for i in categories:
+    print i
 
 # Get entire jokes data.
-cn.get_all_jokes()
-for i in data:
+jokes = cn.get_all_jokes()
+for i in jokes:
     print(i.id)
     print(i.joke)
     print(i.categories)
