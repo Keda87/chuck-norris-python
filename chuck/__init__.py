@@ -19,6 +19,12 @@ class Norris(object):
         self.joke = None
         self.categories = None
 
+    def __repr__(self):
+        return '<{cls}: {joke}>'.format(
+            cls=self.__class__.__name__,
+            joke=self.joke
+        )
+
 
 class ChuckNorris(object):
 
