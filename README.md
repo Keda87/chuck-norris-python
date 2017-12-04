@@ -10,7 +10,7 @@ Python wrapper for "The Internet Chuck Norris Database" http://www.icndb.com/api
 ```python
 from chuck import ChuckNorris
 
-cn = ChunkNorris()
+cn = ChuckNorris()
 
 # Get random jokes.
 data = cn.random()
@@ -58,7 +58,7 @@ print(total)
 # Get all jokes categories.
 categories = cn.get_jokes_categories()
 for i in categories:
-    print i
+    print(i)
 
 # Get entire jokes data.
 jokes = cn.get_all_jokes()
