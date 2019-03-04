@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='chuck-norris-python',
-    version='1.1',
+    version='1.2',
     packages=['chuck'],
     license='MIT',
     long_description='Python wrapper for "The Internet Chuck Norris Database" http://www.icndb.com/api/',
